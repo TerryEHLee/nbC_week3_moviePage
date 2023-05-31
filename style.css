@@ -1,0 +1,46 @@
+.nav {
+  width: 100%;
+  height: 300px;
+
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  text-align: center;
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.searchBar textarea {
+  font-size: 15px;
+  width: 200px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.searchBar .btn {
+  padding: 10px;
+  height: 15px;
+  background-color: #ccc;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+}
