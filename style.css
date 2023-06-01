@@ -60,15 +60,27 @@
   justify-self: center;
   border-radius: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .card:hover {
   cursor: pointer;
 }
 
-.imgBox {
+.imageBox {
   width: 100%;
   border-radius: 10px;
+}
+
+.cardImgTop {
+  width: 100%;
+  height: 200%;
+  padding-bottom: 0%;
+  position: relative;
+}
+
+.cardBody {
+  margin-bottom: 10px;
 }
 
 .footer {
