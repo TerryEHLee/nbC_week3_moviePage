@@ -23,12 +23,11 @@ fetch(
       let cardSpread = `<div class="cardClass">
         <div class="card">
           <div class="imageBox">
-            <img src="" class="cardImgTop" alt="image does not loaded">
+            <img src="https://image.tmdb.org/t/p/w300/${posterPath}" class="cardImgTop" alt="image does not loaded">
           </div>
           <div class="cardBody">
             <h5 class="title">${title}</h5>
             <p class="overview">${overview}</p>
-            <p class="posterPath">${posterPath}</p>
             <p class="voteAverage">${voteAverage}</p>
           </div>
         </div>
