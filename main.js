@@ -60,9 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .value.toLowerCase();
 
     const cards = document.querySelectorAll(".card");
+    const cardBox = document.querySelector(".cardBox");
     cards.forEach(function (card) {
       const title = card.querySelector(".title").textContent.toLowerCase();
       if (title.includes(searchInput)) {
+        cardBox.prepend(card); // 검색된 카드를 가장 앞으로 이동
         card.style.display = "block"; // 필터링된 영화 카드 표시
       } else {
         card.style.display = "none"; // 필터링되지 않은 영화 카드 숨김
