@@ -12,5 +12,31 @@ fetch(
   options
 )
   .then((response) => response.json())
+  .then((data) => {
+    let rows = data.results;
+    rows.forEach((number) => {
+      let title = number.title;
+      let overview = number.overview;
+      let posterPath = number.poster_path;
+      let voteAverage = number.vote_average;
+
+      let cardSpread = `<div class="cardClass">
+        <div class="card">
+          <div class="imageBox">
+            <img src="" class="cardImgTop" alt="image does not loaded">
+          </div>
+          <div class="cardBody">
+            <h5 class="title">${title}</h5>
+            <p class="overview">${overview}</p>
+            <p class="posterPath">${posterPath}</p>
+            <p class="voteAverage">${voteAverage}</p>
+          </div>
+        </div>
+      </div>`;
+
+      const cardBox = document.querySelector(".cardBox");
+      cardBox.insertAdjacentHTML("beforeend", cardSpread);
+    });
+  })
   .then((response) => console.log(response))
   .catch((err) => console.error(err));
