@@ -19,9 +19,10 @@ fetch(
       let overview = number.overview;
       let posterPath = number.poster_path;
       let voteAverage = number.vote_average;
+      let id = number.id;
 
       let cardSpread = `<div class="cardClass">
-        <div class="card">
+        <div class="card" id="${id}">
           <div class="imageBox">
             <img src="https://image.tmdb.org/t/p/w300/${posterPath}" class="cardImgTop" alt="image does not loaded">
           </div>
@@ -36,6 +37,14 @@ fetch(
       const cardBox = document.querySelector(".cardBox");
       cardBox.insertAdjacentHTML("beforeend", cardSpread);
     });
+
+    // 카드 클릭 시 alert 창
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      card.addEventListener("click", function () {
+        let id = this.getAttribute("id");
+        alert("해당 영화의 id는 " + id + "입니다.");
+      });
+    });
   })
-  .then((response) => console.log(response))
   .catch((err) => console.error(err));
