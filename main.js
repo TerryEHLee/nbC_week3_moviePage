@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cards.forEach((card) => {
         card.addEventListener("click", function () {
           let id = this.getAttribute("id");
-          alert("해당 영화의 id는 " + id + "입니다.");
+          alert("id :" + id);
         });
       });
     })
@@ -59,16 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
       .getElementById("searchInput")
       .value.toLowerCase();
 
-    const cards = document.querySelectorAll(".card");
+    const cards = Array.from(document.querySelectorAll(".card"));
     const cardBox = document.querySelector(".cardBox");
+
     cards.forEach(function (card) {
       const title = card.querySelector(".title").textContent.toLowerCase();
-      if (title.includes(searchInput)) {
-        cardBox.prepend(card); // 검색된 카드를 가장 앞으로 이동
-        card.style.display = "block"; // 필터링된 영화 카드 표시
-      } else {
-        card.style.display = "none"; // 필터링되지 않은 영화 카드 숨김
-      }
+      card.style.display = title.includes(searchInput) ? "block" : "none";
+    });
+
+    const filteredCards = cards.filter(function (card) {
+      return card.style.display === "block";
+    });
+
+    cardBox.innerHTML = ""; // 카드 박스 비우기
+
+    filteredCards.forEach(function (card) {
+      cardBox.appendChild(card); // 필터링된 카드를 다시 추가
     });
   });
 });
